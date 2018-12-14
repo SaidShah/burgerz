@@ -12,6 +12,7 @@ const BurgerItem = (props) => {
       </div>
     </div>
   )
+  
 }
 
 export default BurgerItem
