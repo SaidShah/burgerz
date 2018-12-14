@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
 
-const BurgerDisplay = (props) => {
+class BurgerDisplay extends Component {
+  state={
+    cat: " ",
+    bougie: " ",
+    relateble: " "
+  }
+
+render(){
   return (
     <div className="BurgerDisplay">
-      <img src={"" /* Insert burger Image URL here */}/>
+      <img src={this.props.burgerGiven.imgURL}/>
       <br/>
-      <h1>Insert Burger Name Here</h1>
+      <h1>{this.props.burgerGiven.name}</h1>
       <br/>
-      <select onChange={console.log}>
-        <option value="Relatable">Relatable</option>
+      <select onChange={this.changeCategory} value={this.props.burgerGiven.category}>
+        <option value="Relatable" >Relatable</option>
         <option value="Bougie">Bougie</option>
       </select>
     </div>
   )
+}
 }
 
 export default BurgerDisplay
